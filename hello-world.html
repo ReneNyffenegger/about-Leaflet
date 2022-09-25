@@ -1,0 +1,47 @@
+<head>
+
+    <link rel         = "stylesheet"
+          href        = "https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+          integrity   = "sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+          crossorigin = "" />
+
+  <script src         = "https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+          integrity   = "sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+          crossorigin = "">
+  </script>
+
+</head>
+
+<body>
+
+<div id="map" />
+
+<style>
+  #map {
+    position: absolute;
+    top     : 0px     ;
+    left    : 0px     ;
+    height  : 100%    ;
+    width   : 100%    ;
+  }
+</style>
+
+<script>
+
+    const lat  = 47.5162;
+    const lon  =  8.6468;
+    const zoom = 17;
+
+    const map = L.map('map').setView([lat, lon], zoom);
+
+    L.tileLayer(
+        'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+  //    'https://api.maptiler.com/maps/bright/256/{z}/{x}/{y}.png?key=…',
+    {
+  //     minZoom:  1, maxZoom: 19
+         attribution: '© OpenStreetMap'  // https://www.openstreetmap.org/copyright
+    }).addTo(map);
+
+</script>
+
+</body>
